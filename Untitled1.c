@@ -1,33 +1,17 @@
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
 
 int main()
 
 {
-    int a;
-    int b;
-    int c;
-    int d;
+    int sum=0, i=10, n;
 
-    printf ("Unesite troznamenkasti broj:\n");
-    scanf ("%d", &a);
-
-    b = a/100;
-    c= a/10 - b*10;
-    d= a%10;
-
-    if (pow(b,3) + pow(c,3) + pow(d,3) == a)
-    {
-        printf ("To je Armstrongov broj");
+    while(i){
+        scanf("%d", &n);
+        sum+=n;
+        i--;
     }
-    else
-    {
-        printf ("To nije Armstrongov broj");
-    }
-
-
-
+    printf("ukupno:%d",sum);
+    printf("prosjecno:%f",(float)sum/10);
 }
