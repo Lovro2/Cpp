@@ -1,34 +1,30 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(){
+
+	int n,masa,count=1;
+	int sum=0;
+
+	printf("\tUnesi n\t\n");
+	scanf("%d",&n);
+
+	while(n>0){
+		printf("Unesi masu\n");
+		scanf("%d",&masa);
+		n--;
+		printf("%d\n",sum);
+		if(sum+masa>1000){
+			sum=masa;
+
+			count++;
+		}
+		else sum+=masa;
+}
 
 
-int main()
-{
-    int a;
 
-    printf ("Unesite broj kvadranta:\n");
-    scanf ("%d", &a);
-
-    if (a==1)
-    {
-    printf ("+ +");
-    }
-    else if (a==2)
-    {
-    printf ("- +");
-    }
-    else if (a==3)
-    {
-    printf ("- -");
-    }
-    else if (a==4)
-    {
-    printf ("+ -");
-    }
-    else
-    {
-    printf ("Unesen krivi kvadrant");
-    }
+	printf("Potrebno nam je %d sanduka", count);
 
 
 
