@@ -1,25 +1,28 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include<stdlib.h>
+#include<stdio.h>
 
-    int main()
+int main()
+
 {
+    int n,k,A1,A2,A3,A4,A5,B,brBod=0;
+    printf("Unesi broj zadataka i koliko Josip zna\n");
+    scanf("%d", &n);
+    printf("unesi broj zadataka\n");
+    scanf("%d", &k);
+    printf("unesi koliko zadataka Josip zna\n");
+    scanf("%d %d %d %d %d", &A1, &A2, &A3, &A4, &A5);
 
-    int n,m=0,sum=0;
-    printf("Unesi broj\n");
-    scanf("%d",&n);
+    while(k){
+            k--;
+    scanf("%d",B);
 
-    while (n){
-    m=m*10+n%10;
-    n/=10;
+    if(B==A1||B==A2||B==A3||B==A4||B==A5) brBod++;
     }
+    brBod=brBod==0?1:brBod;
 
-    while (m){
-    scanf("%d",&n);
-    sum+=n*(m%10);
-    m/=10;
-    }
-    printf("%d \n",sum);
+    printf("Dobio je %d",brBod);
 
-    return 0;
-    }
+
+
+
+}
