@@ -1,14 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
 
- int moze(int x){
-        return(x+7)>170;
-    }
+int Profit(int n){
+    int profitpocasi=50*0.3;
+    int rezultat = n*profitpocasi;
 
-int main()
-{
-    int x;
-    scanf("%d",&x);
-    printf(moze(x)?"moze":"ne moze");
+return rezultat; }
+
+int main(){
+
+
+ int n;
+
+ scanf("%d", &n);
+ printf("profit je %d",Profit(n));
+
+
+
 }
+
