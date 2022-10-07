@@ -1,21 +1,22 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int Profit(int n){
-    int profitpocasi=50*0.3;
-    int rezultat = n*profitpocasi;
-
-return rezultat; }
-
-int main(){
-
-
- int n;
-
- scanf("%d", &n);
- printf("profit je %d",Profit(n));
-
-
-
+int Dominik(int x, int y, int z){
+if(z>x)
+return printf("1");
+if(z>=x&&z>(x+y))
+return printf("2");
+if(if(z>=x&&z<(x+y));
+return printf("0");
 }
 
+int main()
+{
+    int a,b,c;
+    printf("Unesi cijenu teretane mjesecno\n");
+    scanf("%d", &a);
+    printf("Unesi cijenu privatnog trenera\n");
+    scanf("%d", &b);
+    printf("Unesi Dominikov ukupni budzet\n");
+    scanf("%d", &c);
+}
