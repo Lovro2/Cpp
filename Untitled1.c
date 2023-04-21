@@ -1,118 +1,70 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+struct zeko{
+      int masa;
+      int kolicina_hrane;
+      int darezljivost;
+      char ime[20];
+}ze;
 
 
-struct ocjene{
-                char ime[20];
-                char predmet[20];
-                int ocjena;
-
-                }oc;
-void novi(){
+void unos(){
 
 	FILE*filePointer;
-	filePointer=fopen("ocjene.txt","w");
+	filePointer=fopen("zeko1.txt","a");
 
-	printf("Kako se zove ucenik?");
-	scanf("%s", &oc.ime);
-	printf("Koji predmet?");
-	scanf("%s", &oc.predmet);
-	printf("Kolika je ocjena?");
-	scanf("%d", &oc.ocjena);
+	printf("Kolika je masa zekana ?");
+	scanf("%d", &ze.masa);
+	printf("Koju kolicinu hrane zdere zeko ?");
+	scanf("%d", &ze.kolicina_hrane);
+	printf("Kolika je zekina darezljivost ?");
+	scanf("%d", &ze.darezljivost);
+	printf("Kako se zeko zove ?");
+	scanf("%s", ze.ime);
 
-	fprintf(filePointer, "%s, %s, %d", oc.ime, oc.predmet, &oc.ocjena);
+	fprintf(filePointer, "%d  %d  %d  %s\n", ze.masa, ze.kolicina_hrane, ze.darezljivost, ze.ime);
 	fclose(filePointer);
-
-	filePointer=fopen("predmet.txt","w");
-	fclose(filePointer);
-	int flag=0;
-	char a;
-    while(fscanf(filePointer,"%s", oc.predmet)==1){
-        strcmp(a, predmet);
-        flag=1;
-}
-void Prosjek_ocjena(){
-FILE*filePointer;
-	filePointer=fopen("ocjene.txt","r");
-    int i=0;
-    int sum=0;
-    while(fscanf(filePointer, "%s, %s, %d", oc.ime, oc.predmet, &oc.ocjena)==3){
-       sum+=oc.ocjena;
-       i++;
-
-    }
-    printf("prosjek je %.2f", (float)sum/i);
-}
-void Br_predmeta(){
-FILE*filePointer;
-	filePointer=fopen("predmet.txt","r");
-    int flag=0;
-    while(fscanf(filePointer,"%s", oc.predmet)==1){
-        strcmp(a, predmet);
-        flag=1;
-
-}
-
-
-
-    fclose(filePointer);
-}
-void prosjek(){
-FILE*filePointer;
-filePointer=fopen("ocjene.txt","r");
-char odabir[20];
-    printf("Unesi predmet za koji zelis ispisati prosjek: ");
-    scanf("%s", odabir);
-    while(fscanf(filePointer,"%s, %s, %d", oc.ime, oc.predmet, &oc.ocjena) == 3){
-        if (!strcmp(odabir, oc.predmet)){
-
-    }
-    fclose(filePointer);
-    printf("Prosjek za predmet %s je %.2f");
 }
 void ispis(){
+    FILE*filePointer;
+	filePointer=fopen("zeko1.txt","r");
 
-	FILE*filePointer;
-	filePointer=fopen("ocjene.txt","r");
+	while(fscanf(filePointer,"%d %d %d %s", &ze.masa, &ze.kolicina_hrane, &ze.darezljivost, ze.ime)==4)
+        printf("%d %d %d %s\n\n", ze.masa, ze.kolicina_hrane, ze.darezljivost, ze.ime);
 
-	while(fscanf(filePointer, "%s, %s, %d", oc.ime, oc.predmet, &oc.ocjena)==3){
-            printf("%s, %s, %d", oc.ime, oc.predmet, &oc.ocjena);
-	}
-	}
-
-int main(){
-
-
-char odabir;
-odabir=getch()
-do{
-    printf("1. Unos ocjene\n");
-    printf("2. Prosjek ocjene\n");
-    printf("3. Broj predmeta\n");
-    printf("4. Prosjek\n");
-	printf("5. Exit\n");
-    printf("6. Ispis\n");
-	scanf("%d",&odabir);
-
-if(odabir==1){
-	novi();}
-	else if(odabir==2){
-	Prosjek_ocjena();}
-    else if(odabir==3){
-	Br_predmeta();}
-    else if(odabir==4){
-	prosjek();}
-    else if(odabir==5){
-	printf("5.Exit\n");}
-	else if(odabir==6){
-    ispis();
-	}
-
-} while (odabir!=5);
-
-
-
-
+   fclose(filePointer);
 }
+
+
+
+int main()
+{
+
+   char odabir;
+
+do{
+
+    printf("1. Unos \n");
+    printf("2. \n");
+    printf("3. \n");
+    printf("4. \n");
+    printf("5. Exit\n");
+    printf("6. Ispis\n");
+
+    odabir=getch();
+
+    switch (odabir){
+    	case '1': unos();
+    	break;
+    	case '6': ispis();
+    	break;
+	 }
+}while (odabir!='5');
+
+
+
+    return 0;
+}
+
